@@ -1,9 +1,10 @@
 # project
 
-###Создать страницу Project (Домашнее задание 6):
+### Создать страницу Project (Домашнее задание 6):
 
 В блоке categoreis необходимо сделать переключение проектов на ваше усмотрение.
-[Страница Projects](https://natalia-orlova.github.io/project/)
+
+[Посмотреть страницу Projects](https://natalia-orlova.github.io/project/)
 
 ### Project setup
 ```
