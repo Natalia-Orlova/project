@@ -2,7 +2,7 @@
   <div>
     <div class="banner">
       <img :src="bannerInfo.banner" alt="banner_img" class="banner__img">
-      <div class="banner__intro">
+      <div v-if="bannerInfo.bannerTitle || bannerInfo.bannerLinks" class="banner__intro">
         <h2 class="banner__intro_title">{{bannerInfo.bannerTitle}}</h2>
         <nav class="banner__intro_breadcrumbs">
           <a v-for="link in bannerInfo.bannerLinks" :key="link.id" href="#" class="blog-link">{{link}}</a>

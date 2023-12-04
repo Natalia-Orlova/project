@@ -1,9 +1,7 @@
 <template>
     <div id="blog-details" class="blog-details-box">
       <HeaderComp/>
-      <div class="banner">
-        <img :src="banner" alt="banner_img" class="banner__img">
-      </div>
+      <BannerComp :banner-info="bannerInfo"/>
       <div class="blog-details center">
         <div class="articles-box">
           <article
@@ -63,6 +61,7 @@
 <script>
 import FooterComp from '../blocks/FooterComp.vue'
 import HeaderComp from '../blocks/HeaderComp.vue'
+import BannerComp from '../components/BannerComp.vue'
 
 export default {
   name: 'BlogDetails',
@@ -148,7 +147,9 @@ export default {
           text: 'Kitchen Planning'
         }
       ],
-      banner: 'img/blog_details_banner.jpg',
+      bannerInfo: {
+        banner: 'img/blog_details_banner.jpg'
+      },
       title: 'Tags',
       isActiveStyle: {
         color: '#fff',
@@ -161,7 +162,7 @@ export default {
       this.sortedArticle = this.articles.filter((article) => article.id === e.target.id)
     }
   },
-  components: { HeaderComp, FooterComp }
+  components: { HeaderComp, FooterComp, BannerComp }
 }
 </script>
 

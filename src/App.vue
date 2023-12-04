@@ -2,18 +2,21 @@
   <div id="app">
     <BlogDetails/>
     <ProjectsPage/>
+    <ProjectDetails/>
   </div>
 </template>
 
 <script>
 import BlogDetails from './components/pages/BlogDetails.vue'
+import ProjectDetails from './components/pages/ProjectDetails.vue'
 import ProjectsPage from './components/pages/ProjectsPage.vue'
 
 export default {
   name: 'App',
   components: {
     BlogDetails,
-    ProjectsPage
+    ProjectsPage,
+    ProjectDetails
   }
 }
 </script>
