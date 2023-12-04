@@ -7,7 +7,7 @@
 
 Слайдер можно сделать самостоятельно с помощью vue или сделать с помощью bootstrap.
 
-[Посмотреть страницу Project details](https://natalia-orlova.github.io/project/)
+#[Посмотреть страницу Project details](https://natalia-orlova.github.io/project/)
 
 -------------------------------------------------------------------------------------
 
