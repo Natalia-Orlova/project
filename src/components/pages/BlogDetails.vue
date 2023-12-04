@@ -1,5 +1,6 @@
 <template>
     <div id="blog-details" class="blog-details-box">
+      <HeaderComp/>
       <div class="banner">
         <img :src="banner" alt="banner_img" class="banner__img">
       </div>
@@ -55,10 +56,14 @@
           </div>
         </aside>
       </div>
+      <FooterComp/>
     </div>
 </template>
 
 <script>
+import FooterComp from '../blocks/FooterComp.vue'
+import HeaderComp from '../blocks/HeaderComp.vue'
+
 export default {
   name: 'BlogDetails',
   data () {
@@ -70,10 +75,8 @@ export default {
           src: 'img/blog_details_article.jpg',
           alt: 'article_img',
           date: '26 December,2022',
-          text1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          text2:
-            'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
+          text1: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
         }
       ],
       articles: [
@@ -83,10 +86,8 @@ export default {
           src: 'img/blog_details_article.jpg',
           alt: 'article_img',
           date: '26 December,2022',
-          text1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          text2:
-            'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
+          text1: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
         },
         {
           id: 'bedroom',
@@ -94,10 +95,8 @@ export default {
           src: 'img/top_photo.jpg',
           alt: 'article_img',
           date: '26 December,2022',
-          text1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          text2:
-            'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
+          text1: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
         },
         {
           id: 'building',
@@ -105,10 +104,8 @@ export default {
           src: 'img/news2.jpg',
           alt: 'article_img',
           date: '26 December,2022',
-          text1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          text2:
-            'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
+          text1: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
         },
         {
           id: 'architecture',
@@ -116,10 +113,8 @@ export default {
           src: 'img/projects2.jpg',
           alt: 'article_img',
           date: '26 December,2022',
-          text1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          text2:
-            'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
+          text1: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
         },
         {
           id: 'kitchen-planning',
@@ -127,10 +122,8 @@ export default {
           src: 'img/news1.jpg',
           alt: 'article_img',
           date: '26 December,2022',
-          text1:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          text2:
-            'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
+          text1: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
         }
       ],
       tags: [
@@ -165,11 +158,10 @@ export default {
   },
   methods: {
     filterArticles (e) {
-      this.sortedArticle = this.articles.filter(
-        (article) => article.id === e.target.id
-      )
+      this.sortedArticle = this.articles.filter((article) => article.id === e.target.id)
     }
-  }
+  },
+  components: { HeaderComp, FooterComp }
 }
 </script>
 
