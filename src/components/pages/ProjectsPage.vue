@@ -131,9 +131,9 @@ export default {
 }
 
 .projects {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
   gap: 27px;
   margin-bottom: 60px;
 }
