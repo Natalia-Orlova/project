@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <BlogDetails/>
-    <ProjectsPage/>
+    <!-- <BlogDetails/>
+    <ProjectsPage/> -->
     <ProjectDetails/>
   </div>
 </template>
 
 <script>
-import BlogDetails from './components/pages/BlogDetails.vue'
+// import BlogDetails from './components/pages/BlogDetails.vue'
 import ProjectDetails from './components/pages/ProjectDetails.vue'
-import ProjectsPage from './components/pages/ProjectsPage.vue'
+// import ProjectsPage from './components/pages/ProjectsPage.vue'
 
 export default {
   name: 'App',
   components: {
-    BlogDetails,
-    ProjectsPage,
+    // BlogDetails,
+    // ProjectsPage,
     ProjectDetails
   }
 }
