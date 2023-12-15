@@ -19,7 +19,7 @@
           <div v-for="project in projects" :key="project.id" class="project">
             <img :src="project.img" alt="project_img" :style=project.imgStyle>
             <div class="project__desc">
-              <a href="#" class="project__name">{{project.name}}</a>
+              <router-link to="/blog"  class="project__name">{{project.name}}</router-link>
               <p class="project__text">{{ project.desc }}</p>
             </div>
             <a href="#" class="next"><svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,6 +34,23 @@
         <p class="counter__item_desc">{{ item.desc }}</p>
       </li>
     </ul>
+    <section id="blog" class="news center">
+      <h1 class="news__title">Articles & News</h1>
+      <p class="news__subtitle">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
+      <div class="articles">
+        <article v-for="article in articles" :key="article.id" class="articles__item">
+          <img class="articles__item_img" :src=article.img alt="article_photo">
+          <p class="articles__item_theme">{{ article.theme }}</p>
+          <router-link to="/blog" class="articles__item_title">{{ article.title }}</router-link>
+          <div class="articles__item_date">
+            <p class="articles__item_datetext">{{ article.date }}</p>
+            <a href="#" class="articles__item_next"><svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -93,6 +110,29 @@ export default {
         {
           num: 95,
           desc: 'Happy Customers'
+        }
+      ],
+      articles: [
+        {
+          id: 0,
+          img: 'img/news1.jpg',
+          theme: 'Kitchen Design',
+          title: 'Let’s Get Solution For Building Construction Work',
+          date: '26 December,2022'
+        },
+        {
+          id: 1,
+          img: 'img/news2.jpg',
+          theme: 'Living Design',
+          title: 'Low Cost Latest Invented Interior Designing<br> Ideas.',
+          date: '22 December,2022'
+        },
+        {
+          id: 2,
+          img: 'img/news3.jpg',
+          theme: 'Interior Design',
+          title: 'Best For Any Office & Business Interior<br> Solution',
+          date: '25 December,2022'
         }
       ]
     }
@@ -307,6 +347,127 @@ export default {
   &__item:not(:last-child) {
     border-right: 1px solid #cda274;
     padding-right: 54px;
+  }
+}
+.news {
+  text-align: center;
+
+  &__title {
+    color: #292f36;
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 62.5px */
+    letter-spacing: 1px;
+  }
+
+  &__subtitle {
+    max-width: 810px;
+    margin-left: 154px;
+    color: #4d5053;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 33px */
+    letter-spacing: 0.22px;
+    margin-bottom: 52px;
+  }
+
+  .articles {
+    display: flex;
+    gap: 27px;
+    margin-bottom: 96px;
+
+    &__item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      padding: 21px;
+      border-radius: 62px;
+      border: 1px solid #e7e7e7;
+      box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+
+      &_img {
+        border-radius: 42px 42px 0 0;
+        margin-bottom: 10px;
+      }
+
+      &_theme {
+        padding: 6px 8px;
+        position: absolute;
+        top: 250px;
+        left: 40px;
+        border-radius: 8px 8px 8px 0px;
+        background: #fff;
+        color: #4d5053;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        letter-spacing: 0.16px;
+      }
+
+      &_title {
+        margin-bottom: 30px;
+        max-width: 305px;
+        text-align: left;
+        color: #292f36;
+        font-family: DM Serif Display;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 125%; /* 31.25px */
+        letter-spacing: 0.5px;
+        transition: all 0.3s;
+      }
+
+      &_title:hover {
+        color: #cda274;
+      }
+
+      &_date {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &_datetext {
+        align-items: center;
+        color: #4d5053;
+        font-family: Jost;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        letter-spacing: 0.16px;
+      }
+
+      &_next {
+        width: 52px;
+        height: 52px;
+        padding: 15px 20px;
+        border-radius: 50%;
+        background-color: #f4f0ec;
+        transition: all 0.3s;
+      }
+
+      &_next svg path {
+        transition: all 0.3s;
+      }
+
+      &_next:hover {
+        background-color: #cda27442;
+      }
+
+      &_next:hover svg path {
+        stroke: #cda274;
+      }
+
+      &_nextwhite {
+        background-color: #fff;
+      }
+    }
   }
 }
 </style>

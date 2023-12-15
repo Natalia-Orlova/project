@@ -28,7 +28,7 @@ export default {
       bannerInfo: {
         banner: 'img/projects_banner.jpg',
         bannerTitle: 'Our Project',
-        bannerLinks: ['Home', 'Blog']
+        bannerLinks: ['Home', 'Project']
       },
       currentTab: 'Bedroom',
       categories: ['Bathroom', 'Bedroom', 'Kitchen', 'Livingroom']

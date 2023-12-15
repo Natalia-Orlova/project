@@ -14,10 +14,12 @@ export default {
   components: {
     HeaderComp,
     FooterComp
+  },
+  created () {
+    if (this.$route.path !== '/home') {
+      this.$router.push({ name: 'home' }) // страница по умолчанию
+    }
   }
-  // created () {
-  //   // this.$router.push({ name: 'home' })
-  // }
 }
 </script>
 
@@ -40,5 +42,4 @@ export default {
 a {
   text-decoration: none;
 }
-
 </style>

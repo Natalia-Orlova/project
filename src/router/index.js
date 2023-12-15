@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// import BlogPage from '@/components/pages/BlogPage.vue'
 import BlogDetails from '@/components/pages/BlogDetails.vue'
 import ProjectsPage from '@/components/pages/ProjectsPage.vue'
 import NotFound from '@/components/pages/NotFound.vue'
@@ -22,6 +23,11 @@ export default new Router({
     {
       path: '/blog',
       name: 'blog',
+      component: BlogDetails // нужно перенести страницу blogs
+    },
+    {
+      path: '/blog-details',
+      name: 'blog-details',
       component: BlogDetails
     },
     {
