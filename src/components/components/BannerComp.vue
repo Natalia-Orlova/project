@@ -5,7 +5,8 @@
       <div v-if="bannerInfo.bannerTitle || bannerInfo.bannerLinks" class="banner__intro">
         <h2 class="banner__intro_title">{{bannerInfo.bannerTitle}}</h2>
         <nav class="banner__intro_breadcrumbs">
-          <a v-for="link in bannerInfo.bannerLinks" :key="link.id" href="#" class="blog-link">{{link}}</a>
+          <router-link class="blog-link" to="/home">Home</router-link>
+          <router-link class="blog-link" to="/blog">Blog</router-link>
         </nav>
       </div>
     </div>

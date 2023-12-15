@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <!-- <BlogDetails/>
-    <ProjectsPage/> -->
-    <ProjectDetails/>
+    <HeaderComp />
+    <FooterComp/>
   </div>
 </template>
 
 <script>
-// import BlogDetails from './components/pages/BlogDetails.vue'
-import ProjectDetails from './components/pages/ProjectDetails.vue'
-// import ProjectsPage from './components/pages/ProjectsPage.vue'
+import FooterComp from './components/blocks/FooterComp.vue'
+import HeaderComp from './components/blocks/HeaderComp.vue'
 
 export default {
   name: 'App',
   components: {
-    // BlogDetails,
-    // ProjectsPage,
-    ProjectDetails
+    HeaderComp,
+    FooterComp
   }
+  // created () {
+  //   // this.$router.push({ name: 'home' })
+  // }
 }
 </script>
 
@@ -40,4 +40,5 @@ export default {
 a {
   text-decoration: none;
 }
+
 </style>

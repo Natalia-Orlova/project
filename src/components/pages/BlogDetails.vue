@@ -1,6 +1,5 @@
 <template>
     <div id="blog-details" class="blog-details-box">
-      <HeaderComp/>
       <BannerComp :banner-info="bannerInfo"/>
       <div class="blog-details center">
         <div class="articles-box">
@@ -54,13 +53,11 @@
           </div>
         </aside>
       </div>
-      <FooterComp/>
     </div>
 </template>
 
 <script>
-import FooterComp from '../blocks/FooterComp.vue'
-import HeaderComp from '../blocks/HeaderComp.vue'
+
 import BannerComp from '../components/BannerComp.vue'
 
 export default {
@@ -162,7 +159,7 @@ export default {
       this.sortedArticle = this.articles.filter((article) => article.id === e.target.id)
     }
   },
-  components: { HeaderComp, FooterComp, BannerComp }
+  components: { BannerComp }
 }
 </script>
 

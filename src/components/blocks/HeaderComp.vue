@@ -1,36 +1,41 @@
 <template>
   <div>
-    <header id="home" class="header center">
-      <div class="header__left">
-        <a href="#" class="header__left_logo">
+    <div id="home" class="main center">
+      <header class="header center">
+        <div class="header__left">
+          <router-link to="/home" class="header__left_logo">
           <img :src="logo" alt="logo"/>
-        </a>
-        <a href="#" class="header__left_text">Interno</a>
-      </div>
+          </router-link>
+          <router-link to="/home" class="header__left_text">Interno</router-link>
+        </div>
 
-      <nav class="header__breadcrumbs">
-        <a v-for="item in breadcrumbs" :key="item.id" href="#" class="header__breadcrumbs_link">{{item}}</a>
-      </nav>
-    </header>
+        <nav class="header__breadcrumbs">
+          <router-link class="header__breadcrumbs_link" to="/home">Home</router-link>
+          <router-link class="header__breadcrumbs_link" to="/project">Project</router-link>
+          <router-link class="header__breadcrumbs_link" to="/blog">Blog</router-link>
+        <!-- <a v-for="item in breadcrumbs" :key="item.id" href="#" class="header__breadcrumbs_link">{{item}}</a> -->
+        </nav>
+      </header>
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HeaderComp',
-
   data () {
     return {
-      logo: 'img/header_logo.svg',
-      breadcrumbs: ['Home', 'Project', 'Blog']
+      logo: 'img/header_logo.svg'
+      // breadcrumbs: ['Home', 'Project', 'Blog']
     }
   },
-
   methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
+
 .header {
   margin-top: 53px;
   margin-bottom: 50px;

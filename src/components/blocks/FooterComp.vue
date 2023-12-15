@@ -55,9 +55,12 @@
       </div>
       <div class="footer__pages">
         <h1 class="footer__pages_title">Pages</h1>
-        <a v-for="item in pages" :key="item.id" href="index.html" class="footer__pages_link">
+        <router-link to="/home" class="footer__pages_link">Home</router-link>
+        <router-link to="/project" class="footer__pages_link">Project</router-link>
+        <router-link to="/blog" class="footer__pages_link">Blog</router-link>
+        <!-- <a v-for="item in pages" :key="item.id" href="index.html" class="footer__pages_link">
           {{ item }}
-        </a>
+        </a> -->
       </div>
       <div class="footer__services"></div>
       <div class="footer__contact">

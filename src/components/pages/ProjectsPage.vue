@@ -1,6 +1,5 @@
 <template>
   <div>
-    <HeaderComp/>
     <BannerComp :banner-info="bannerInfo"/>
     <div id="dynamic-component" class="category center">
       <a v-for="category in categories"
@@ -11,7 +10,6 @@
     <keep-alive>
       <component :is="currentTabComponent"></component>
     </keep-alive>
-    <FooterComp/>
   </div>
 </template>
 
@@ -22,8 +20,6 @@ import ProjectsBedroom from '../blocks/ProjectsBedroom.vue'
 import ProjectsLivingroom from '../blocks/ProjectsLivingroom.vue'
 import BannerComp from '../components/BannerComp.vue'
 import ProjectItem from '../components/ProjectItem.vue'
-import HeaderComp from '../blocks/HeaderComp.vue'
-import FooterComp from '../blocks/FooterComp.vue'
 
 export default {
   name: 'ProjectsPage',
@@ -43,7 +39,7 @@ export default {
       return 'projects-' + this.currentTab.toLowerCase()
     }
   },
-  components: { BannerComp, ProjectItem, ProjectsBathroom, ProjectsKitchen, ProjectsBedroom, ProjectsLivingroom, HeaderComp, FooterComp }
+  components: { BannerComp, ProjectItem, ProjectsBathroom, ProjectsKitchen, ProjectsBedroom, ProjectsLivingroom }
 }
 </script>
 
