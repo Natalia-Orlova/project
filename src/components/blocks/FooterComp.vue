@@ -2,23 +2,12 @@
   <div>
     <footer class="footer center">
       <div class="footer__interno">
-        <h1 class="footer__interno_title header__left_text">
-          <a href="#" class="footer__interno_logo">
-            <svg
-              width="34"
-              height="34"
-              viewBox="0 0 34 34"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z"
-                fill="#CDA274"
-              />
-            </svg>
-          </a>
-          Interno
-        </h1>
+        <router-link to="/home">
+          <div class="footer__interno_title">
+            <img :src="logo" alt="logo" class="footer__interno_logo"/>
+            <h1 class="footer__interno_heading">Interno</h1>
+          </div>
+        </router-link>
         <p class="footer__interno_text">
           It is a long established fact that a reader will be distracted
           lookings.
@@ -86,7 +75,8 @@ export default {
         '55 East Birchwood Ave. Brooklyn, New York 11201',
         'contact@interno.com',
         '(123) 456 - 7890'
-      ]
+      ],
+      logo: 'img/header_logo.svg'
     }
   }
 }
@@ -102,7 +92,19 @@ export default {
     max-width: 393px;
 
     &_title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 18px;
+    }
+
+    &_heading {
+      color: #292F36;
+      font-family: "DM Serif Display";
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 125%; /* 50px */
     }
 
     &_text {

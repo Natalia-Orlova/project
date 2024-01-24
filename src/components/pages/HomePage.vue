@@ -19,7 +19,7 @@
           <div v-for="project in projects" :key="project.id" class="project">
             <img :src="project.img" alt="project_img" :style=project.imgStyle>
             <div class="project__desc">
-              <router-link to="/blog"  class="project__name">{{project.name}}</router-link>
+              <router-link to="/project-details"  class="project__name">{{project.name}}</router-link>
               <p class="project__text">{{ project.desc }}</p>
             </div>
             <a href="#" class="next"><svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,23 +38,15 @@
       <h1 class="news__title">Articles & News</h1>
       <p class="news__subtitle">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
       <div class="articles">
-        <article v-for="article in articles" :key="article.id" class="articles__item">
-          <img class="articles__item_img" :src=article.img alt="article_photo">
-          <p class="articles__item_theme">{{ article.theme }}</p>
-          <router-link to="/blog" class="articles__item_title">{{ article.title }}</router-link>
-          <div class="articles__item_date">
-            <p class="articles__item_datetext">{{ article.date }}</p>
-            <a href="#" class="articles__item_next"><svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg></a>
-          </div>
-        </article>
+        <NewsItem v-for="article in articles" :key="article.id" :news-data="article" class="articles__item"/>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import NewsItem from '../components/NewsItem.vue'
+
 export default {
   name: 'HomePage',
 
@@ -124,19 +116,20 @@ export default {
           id: 1,
           img: 'img/news2.jpg',
           theme: 'Living Design',
-          title: 'Low Cost Latest Invented Interior Designing<br> Ideas.',
+          title: 'Low Cost Latest Invented Interior Designing Ideas.',
           date: '22 December,2022'
         },
         {
           id: 2,
           img: 'img/news3.jpg',
           theme: 'Interior Design',
-          title: 'Best For Any Office & Business Interior<br> Solution',
+          title: 'Best For Any Office & Business Interior Solution',
           date: '25 December,2022'
         }
       ]
     }
-  }
+  },
+  components: { NewsItem }
 }
 </script>
 

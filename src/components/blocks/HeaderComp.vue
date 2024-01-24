@@ -2,12 +2,12 @@
   <div>
     <div id="home" class="main center">
       <header class="header center">
-        <div class="header__left">
-          <router-link to="/home" class="header__left_logo">
-          <img :src="logo" alt="logo"/>
-          </router-link>
-          <router-link to="/home" class="header__left_text">Interno</router-link>
-        </div>
+        <router-link to="/home">
+          <div class="header__left">
+            <img :src="logo" alt="logo" class="header__left_logo"/>
+            <h1 class="header__left_text">Interno</h1>
+          </div>
+        </router-link>
 
         <nav class="header__breadcrumbs">
           <router-link class="header__breadcrumbs_link" to="/home">Home</router-link>

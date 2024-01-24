@@ -24,18 +24,17 @@
               </nav>
             </div>
             <p class="article-item__text">{{ article.text1 }}</p>
+            <ol v-if="article.list" class="article-item__list">
+              <li v-for="list_item in article.list" :key="list_item.id" class="article-item__list_li">{{ list_item.text }}</li>
+            </ol>
             <p class="article-item__text">{{ article.text2 }}</p>
+            <div v-if="article.quotes && article.text3"  class="quote">
+              <img class="quote__quotes"
+              :src="article.quotes"
+              alt="quotes"/>
+              <p class="quote__text">{{ article.text3 }}</p>
+            </div>
           </article>
-          <div class="quote">
-            <img
-              class="quote__quotes"
-              src="img/quotes.svg"
-              alt="quotes"
-            />
-            <p class="quote__text">
-              The details are not the details. They make the design.
-            </p>
-          </div>
         </div>
 
         <aside class="sidebar">
@@ -72,7 +71,9 @@ export default {
           alt: 'article_img',
           date: '26 December,2022',
           text1: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
+          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
+          quotes: 'img/quotes.svg',
+          text3: 'The details are not the details. They make the design.'
         }
       ],
       articles: [
@@ -83,7 +84,31 @@ export default {
           alt: 'article_img',
           date: '26 December,2022',
           text1: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
-          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.'
+          text2: 'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
+          quotes: 'img/quotes.svg',
+          text3: 'The details are not the details. They make the design.'
+        },
+        {
+          id: 'kitchen',
+          title: 'Design sprints are great',
+          src: 'img/blog_details_article2.jpg',
+          alt: 'article_img',
+          date: '26 December,2022',
+          text1: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.',
+          text2: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.',
+          list: [
+            {
+              id: 1,
+              text: 'Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
+            },
+            {
+              id: 2,
+              text: 'Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
+            },
+            {
+              id: 1,
+              text: 'Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
+            }]
         },
         {
           id: 'bedroom',
@@ -177,6 +202,7 @@ export default {
   display: flex;
   flex-direction: row;
   gap: 57px;
+  margin-bottom: 60px;
 
   .article-item {
     width: 800px;
@@ -263,7 +289,7 @@ export default {
     align-items: center;
     border-radius: 50px;
     background: #f4f0ec;
-    margin-bottom: 96px;
+    margin-bottom: 28px;
 
     &__text {
       width: 350px;
