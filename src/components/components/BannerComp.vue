@@ -6,7 +6,7 @@
         <h2 class="banner__intro_title">{{bannerInfo.bannerTitle}}</h2>
         <nav class="banner__intro_breadcrumbs">
           <router-link class="blog-link" to="/home">Home</router-link>
-          <router-link class="blog-link" to="/blog">Blog</router-link>
+          <router-link class="blog-link" :to="`/${bannerInfo.bannerLinks[1].toLowerCase()}`">{{ bannerInfo.bannerLinks[1] }}</router-link>
         </nav>
       </div>
     </div>

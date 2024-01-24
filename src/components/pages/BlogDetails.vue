@@ -170,7 +170,8 @@ export default {
         }
       ],
       bannerInfo: {
-        banner: 'img/blog_details_banner.jpg'
+        banner: 'img/blog_details_banner.jpg',
+        bannerLinks: ['Home', 'Blog']
       },
       title: 'Tags',
       isActiveStyle: {

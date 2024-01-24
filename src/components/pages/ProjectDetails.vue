@@ -1,12 +1,6 @@
 <template>
   <div>
     <BannerComp :banner-info="bannerInfo"/>
-    <!-- <div v-for="item in projectDetails" :key="item.id" class="project-details center">
-        <h2 class="project-details__title center">{{ item.name }}</h2>
-        <p class='project-details__text center'>{{ item.desc1 }}</p>
-        <p class='project-details__text center'>{{ item.desc2 }}</p>
-        <img class="project-details__img" :src="item.image" alt="project_photo">
-    </div> -->
     <div class="project-details center">
       <h2 class="project-details__title center">{{ projectDetails.name }}</h2>
       <p class='project-details__text center'>{{ projectDetails.desc1 }}</p>
@@ -28,14 +22,12 @@ export default {
       bannerInfo: {
         banner: 'img/project_details_banner.jpg'
       },
-      projectDetails: [
-        {
-          id: 1,
-          name: 'Minimal Look Bedrooms',
-          desc1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. ',
-          desc2: 'In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
-        }
-      ]
+      projectDetails: {
+        id: 1,
+        name: 'Minimal Look Bedrooms',
+        desc1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. ',
+        desc2: 'In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
+      }
     }
   },
   components: { BannerComp, SwiperProjects }
@@ -44,7 +36,6 @@ export default {
 
 <style lang="scss" scoped>
 .project-details{
-    position: relative;
     &__title{
       width: 658px;
       color: #292F36;

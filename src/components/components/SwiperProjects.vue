@@ -42,7 +42,6 @@ export default {
     chooseImage (event) {
       const targetId = Number(event.currentTarget.textContent) - 1
       this.img = this.projectImages[targetId].img
-      console.log(typeof (targetId))
     }
   },
   computed: {
@@ -58,6 +57,7 @@ export default {
   justify-self: center;
   align-items: center;
   gap: 30px;
+  margin-top: 100px;
   margin-bottom: 100px;
 }
 
