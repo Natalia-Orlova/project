@@ -4,7 +4,13 @@
     <BlogLatest v-for="item in latestArticle" :key="item.id" :latest-article="item"/>
     <h2 class="news-title center">Articles & News</h2>
     <div class="blog-news center">
-      <NewsItem v-for="item in articlesNews" :key="item.id" :news-data="item"/>
+      <NewsItem v-for="item in paginatedArticles" :key="item.id" :news-data="item"/>
+    </div>
+    <div class="articles-pagination">
+      <div v-for="page in totalPages" :key="`page${page}`" @click="pageSelect(page)">
+        <router-link class="articles-pagination-item" :to="`/blog/${page}`">
+        {{ page }}</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -80,55 +86,106 @@ export default {
         },
         {
           id: 6,
-          img: 'img/news1.jpg',
-          theme: 'Kitchan Design',
-          title: 'Let’s Get Solution For Building Construction Work',
-          date: '26 December,2022'
-        },
-        {
-          id: 7,
-          img: 'img/news2.jpg',
-          theme: 'Living Design',
-          title: 'Low Cost Latest Invented Interior Designing Ideas',
-          date: '22 December,2022'
-        },
-        {
-          id: 8,
           img: 'img/news3.jpg',
           theme: 'Interior Design',
           title: 'Best For Any Office & Business Interior Solution',
           date: '25 December,2022'
         },
         {
-          id: 9,
+          id: 7,
           img: 'img/news4.jpg',
           theme: 'Kitchan Design',
           title: 'Let’s Get Solution For Building Construction Work',
           date: '26 December,2022'
         },
         {
-          id: 10,
+          id: 8,
           img: 'img/news5.jpg',
           theme: 'Living Design',
           title: 'Low Cost Latest Invented Interior Designing Ideas.',
           date: '22 December,2022'
         },
         {
-          id: 11,
+          id: 9,
           img: 'img/news6.jpg',
           theme: 'Interior Design',
           title: 'Best For Any Office & Business Interior Solution',
           date: '25 December,2022'
+        },
+        {
+          id: 10,
+          img: 'img/news1.jpg',
+          theme: 'Kitchan Design',
+          title: 'Let’s Get Solution For Building Construction Work',
+          date: '26 December,2022'
+        },
+        {
+          id: 11,
+          img: 'img/news2.jpg',
+          theme: 'Living Design',
+          title: 'Low Cost Latest Invented Interior Designing Ideas',
+          date: '22 December,2022'
+        },
+        {
+          id: 12,
+          img: 'img/news3.jpg',
+          theme: 'Interior Design',
+          title: 'Best For Any Office & Business Interior Solution',
+          date: '25 December,2022'
+        },
+        {
+          id: 13,
+          img: 'img/news4.jpg',
+          theme: 'Kitchan Design',
+          title: 'Let’s Get Solution For Building Construction Work',
+          date: '26 December,2022'
+        },
+        {
+          id: 14,
+          img: 'img/news5.jpg',
+          theme: 'Living Design',
+          title: 'Low Cost Latest Invented Interior Designing Ideas.',
+          date: '22 December,2022'
+        },
+        {
+          id: 15,
+          img: 'img/news1.jpg',
+          theme: 'Kitchan Design',
+          title: 'Let’s Get Solution For Building Construction Work',
+          date: '26 December,2022'
+        },
+        {
+          id: 16,
+          img: 'img/news2.jpg',
+          theme: 'Living Design',
+          title: 'Low Cost Latest Invented Interior Designing Ideas',
+          date: '22 December,2022'
         }
-      ]
+      ],
+      perPage: 6,
+      currentPage: 1
     }
   },
-
-  mounted () {
-    console.log(this.$route)
+  methods: {
+    pageSelect (page) {
+      this.currentPage = page
+    }
   },
-
-  methods: {},
+  computed: {
+    totalPages () {
+      return Math.ceil(this.articlesNews.length / this.perPage)
+    },
+    paginatedArticles () {
+      const { currentPage, perPage } = this
+      const startIndex = (currentPage - 1) * perPage
+      const endIndex = startIndex + perPage
+      return this.articlesNews.slice(startIndex, endIndex)
+    }
+  },
+  mounted () {
+    const page = this.$route.params.page
+    if (page) this.currentPage = +page
+  },
   components: { BannerComp, NewsItem, BlogLatest }
 }
 </script>
@@ -150,5 +207,32 @@ export default {
   flex-wrap: wrap;
   gap: 2%;
   margin-bottom: 20px;
+}
+
+.articles-pagination {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 200px;
+    border: 1px solid #CDA274;
+    border-radius: 50px;
+    transition: ease-in-out 0.3s;
+    color: #171a1d;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+    text-transform: capitalize;
+
+  }
+  &-item:hover {
+    border: none;
+    background-color: #F4F0EC;
+  }
 }
 </style>
