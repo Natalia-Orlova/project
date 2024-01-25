@@ -4,12 +4,12 @@
         <div class="top__content">
             <h1 class="top__content_header">{{ topTitle }}</h1>
             <p class="top__content_text">{{ topText }}</p>
-            <a href="#" class="top__content_button">Get Started <svg width="18" height="17" viewBox="0 0 18 17"
+            <router-link to="/project" class="top__content_button">Get Started <svg width="18" height="17" viewBox="0 0 18 17"
             fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 8.43542L14.7232 8.29857M9.61818 1.91138L16.1412 8.43436L9.48677 15.0887"
             stroke="#CDA274" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
             </svg>
-            </a>
+            </router-link>
         </div>
     </div>
     <section id="project" class="projects center">
@@ -22,9 +22,9 @@
               <router-link to="/project-details"  class="project__name">{{project.name}}</router-link>
               <p class="project__text">{{ project.desc }}</p>
             </div>
-            <a href="#" class="next"><svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <router-link to="/project-details" class="next"><svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            </router-link>
           </div>
         </div>
     </section>
