@@ -1,12 +1,6 @@
-## project
+## Проект сайта [Interno](https://www.figma.com/file/okdYD45Tj2JpKsNASccUmf/Interior-Design-Webflow-Website-Template-(Community)-(Copy)-(Copy)?type=design&node-id=1-5&mode=design)
 
 -------------------------------------------------------------------------------------
-• Добавить переключение страниц через Vue Router.
-
-• Сделать страницу 404, которая будет появляться, если пользователь переходит по несуществующей ссылке.
-
-• Доделать проект, если остались недоделанные части.
-
 
 # [Посмотреть страницу](https://natalia-orlova.github.io/project/)
 
