@@ -46,11 +46,11 @@ export default new Router({
       path: '/404',
       name: 'NotFound',
       component: NotFound
+    },
+    {
+      path: '*',
+      redirect: '/404'
     }
-    // {
-    //   path: '*',
-    //   redirect: '/404'
-    // }
   ],
   scrollBehavior (to, from, savePosition) {
     return new Promise((resolve, reject) => {

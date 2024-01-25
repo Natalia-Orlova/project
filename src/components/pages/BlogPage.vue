@@ -7,7 +7,7 @@
       <NewsItem v-for="item in paginatedArticles" :key="item.id" :news-data="item"/>
     </div>
     <div class="articles-pagination">
-      <div v-for="page in totalPages" :key="`page${page}`" @click="pageSelect(page)">
+      <div v-for="page in totalPages" :key="`page${page}`">
         <router-link class="articles-pagination-item" :to="`/blog/${page}`">
         {{ page }}</router-link>
       </div>
@@ -162,16 +162,14 @@ export default {
           date: '22 December,2022'
         }
       ],
-      perPage: 6,
-      currentPage: 1
-    }
-  },
-  methods: {
-    pageSelect (page) {
-      this.currentPage = page
+      perPage: 6
     }
   },
   computed: {
+    currentPage () {
+      const page = this.$route.params.page
+      return page || 1
+    },
     totalPages () {
       return Math.ceil(this.articlesNews.length / this.perPage)
     },
@@ -182,9 +180,11 @@ export default {
       return this.articlesNews.slice(startIndex, endIndex)
     }
   },
-  mounted () {
+  updated () {
     const page = this.$route.params.page
-    if (page) this.currentPage = +page
+    if (!(page <= this.totalPages && page >= 1)) {
+      this.$router.push('/404')
+    }
   },
   components: { BannerComp, NewsItem, BlogLatest }
 }
