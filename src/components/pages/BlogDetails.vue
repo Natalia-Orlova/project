@@ -18,9 +18,9 @@
             <div class="article-item__edition">
               <p class="article-item__edition_date">{{ article.date }}</p>
               <nav class="article-item__edition_breadcrumbs">
-                <a href="#" class="article-item__edition_link">Interior </a>
-                <a href="#" class="article-item__edition_link">Home</a>
-                <a href="#" class="article-item__edition_link">Decore</a>
+                <p class="article-item__edition_path">Interior </p>
+                <p class="article-item__edition_path">Home</p>
+                <p class="article-item__edition_path">Decore</p>
               </nav>
             </div>
             <p class="article-item__text">{{ article.text1 }}</p>
@@ -170,8 +170,7 @@ export default {
         }
       ],
       bannerInfo: {
-        banner: 'img/blog_details_banner.jpg',
-        bannerLinks: ['Home', 'Blog']
+        banner: 'img/blog_details_banner.jpg'
       },
       title: 'Tags',
       isActiveStyle: {
@@ -234,11 +233,16 @@ export default {
       letter-spacing: 0.16px;
       margin-bottom: 48px;
 
-      &_link {
+      &_breadcrumbs {
+        display: flex;
+        gap: 8px;
+      }
+
+      &_path {
         color: #4d5053;
       }
 
-      &_link:not(:last-child)::after {
+      &_path:not(:last-child)::after {
         content: (" / ");
       }
     }

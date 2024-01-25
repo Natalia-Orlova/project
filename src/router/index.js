@@ -43,10 +43,14 @@ export default new Router({
       component: ProjectsKitchen
     },
     {
-      path: '*',
+      path: '/404',
       name: 'NotFound',
       component: NotFound
     }
+    // {
+    //   path: '*',
+    //   redirect: '/404'
+    // }
   ],
   scrollBehavior (to, from, savePosition) {
     return new Promise((resolve, reject) => {
